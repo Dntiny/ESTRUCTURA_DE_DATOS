@@ -1,1 +1,53 @@
+import java.util.Arrays;
+import java.util.Scanner;
 
+public class existe{
+	
+	
+	public static void main(String[] args) {
+		
+		
+		Scanner teclado = new Scanner(System.in);
+		 System.out.print("Por favor ingrese el tamaño del array: ");
+	        int n = teclado.nextInt();
+	        int array [] = new int [n];
+	        
+	        for (int i = 0; i < array.length; i++) {
+	            System.out.print("Ingrese dato "+(i+1)+": ");
+	            array [i] = teclado.nextInt();
+	        }
+	        System.out.print("Por favor ingrese el numero a buscar del array: ");
+	        int input = teclado.nextInt();
+	
+	    int index = search(input, array);
+	
+	    if (index < 0) {
+	        System.out.println("No se encontro " + input);
+	    }
+	
+	}
+	
+	public static int search(int input, int[] array) {
+	    System.out.println("Ingrese el numero a Buscar: " + input + "\n");
+	
+	    System.out.println("ARREGLO ORDENADO \n");
+	
+	   
+	    Arrays.sort(array);
+	
+	  
+	    Arrays.stream(array).forEach(System.out::println);
+	
+	    
+	    int index = Arrays.binarySearch(array, input);
+	
+	   
+	    if (index >= 0) {
+	        System.out.println("El " + input + " se encuentra en la posición " + index);
+	
+	        index = input;
+	    }
+	
+	    return index;
+	}
+}
