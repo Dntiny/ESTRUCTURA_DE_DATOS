@@ -24,7 +24,6 @@ public class Menorarray {
                 menor = array[i];
             }
         }
-        System.out.println("El mayor valor es: "+mayor);
         System.out.println("El menor valor es: "+menor);
     }
 }
